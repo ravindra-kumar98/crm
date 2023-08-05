@@ -1,0 +1,88 @@
+<section class="login-sec">
+    <div class="login-container">
+        <div class="log-col">
+            <div class="form-wrap">
+                <div class="logo-img">
+                    <img src="../../../assets/images/logo.png" alt="Logo">
+                </div>
+                <h1>Hi, welcome to CRM</h1>
+                <h2>Sign Up</h2>
+
+                <form [formGroup]="signupform" (ngSubmit)="signupUser()">
+                    <div class="row gy-4">
+                        <div class="col-6">
+                            <label for="firstName" class="form-label">First Name *</label>
+                            <input type="text" class="form-control user__name d-block" placeholder="First Name" #firstName
+                                formControlName="firstName">
+                            <p class="warn" *ngIf="controlls[0] && controlls[0].invalid && controlls[0].touched">
+                                <fa-icon [icon]="warningIcon"></fa-icon>
+                                Please fill the first name
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <label for="lastName" class="form-label">Last Name *</label>
+                            <input type="text" class="form-control user__name d-block" placeholder="Last Name"
+                                    formControlName="lastName" #lastName>
+                            <p class="warn" *ngIf="controlls[1] && controlls[1].invalid && controlls[1].touched">
+                                <fa-icon [icon]="warningIcon"></fa-icon>
+                                Please fill the last name
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <label for="userEmail" class="form-label">Email *</label>
+                            <ngb-alert *ngIf="isUserAlreadyRegistered" type="danger" [dismissible]="false">
+                                User is already registered with this email.
+                            </ngb-alert>
+                            <input type="email" class="form-control user__name d-block" placeholder="Email" #userEmail
+                                formControlName="userEmail">
+                            <p class="warn" *ngIf="controlls[2] && controlls[2].invalid && controlls[2].touched">
+                                <fa-icon [icon]="warningIcon"></fa-icon>
+                                {{ controlls[2].hasError('email') ? 'This is not a valid mail':'Please enter your user name'}}
+                            </p>                              
+                        </div>
+                        <div class="col-6">
+                            <label for="password" class="form-label">Password *</label>
+                            <input type="password" class="form-control user__name d-block" placeholder="Password"
+                                    formControlName="password" #password>
+                            <p class="warn" *ngIf="controlls[3] && controlls[3].invalid && controlls[3].touched">
+                                <fa-icon [icon]="warningIcon"></fa-icon>
+
+                                {{controlls[3].hasError('required') ? 'Enter your password.' :
+                                  controlls[3].hasError('uppercase') ? 'Password must contain at least one uppercase letter.' : 
+                                  controlls[3].hasError('lowercase') ? 'Password must contain at least one lowercase letter.':
+                                  controlls[3].hasError('digit') ? 'Password must contain at least one digit.':
+                                  controlls[3].hasError('specialCharacter') ? 'Password must contain at least one special character (@, $, !, %, *, ?, or &).':
+                                  controlls[3].hasError('length') ? 'Password must be at least 8 characters long.' : ''}}
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <label for="cPassword" class="form-label">Confirm Password *</label>
+                            <input type="password" class="form-control user__name d-block" placeholder="Confirm Password"
+                                #cPassword formControlName="confirmPassword">
+                                <p class="warn" *ngIf="controlls[4] && controlls[4].invalid && controlls[4].touched">
+                                    <fa-icon [icon]="warningIcon"></fa-icon>
+                                    {{ controlls[4].hasError('compare') ? 'Passwords do not match':'Enter your Confirm password'}}
+                                </p>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn login__btn shrink mb-1">Sign Up</button>
+                            <ul class="forget-pass-lnk">
+                                <li class="mb-2">
+                                    I have already an account
+                                    <a [routerLink]="['/login']">
+                                        Sign In
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="log-col">
+            <div class="banner-img">
+                <img src="../../../assets/images/login-banner.png" alt="Banner">
+            </div>
+        </div>
+    </div>
+</section>

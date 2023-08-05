@@ -1,0 +1,62 @@
+<section class="login-sec">
+    <div class="login-container">
+        <div class="log-col">
+            <div class="form-wrap">
+                <div class="logo-img">
+                    <img src="../../../assets/images/logo.png" alt="Logo">
+                </div>
+                <h1>Hi, welcome to CRM</h1>
+                <h2>Sign in</h2>
+
+                <form [formGroup]="loginform" (ngSubmit)="loginUser()">
+                    <div class="row gy-4">
+                        <div class="col-12">
+                            <label for="exampleInputEmail" class="form-label">User Name *</label>
+                            <input type="email" class="form-control user__name" placeholder="User Name"
+                                #exampleInputEmail formControlName="email">
+                            <p class="warn" #warning *ngIf="userName && userName.invalid && userName.touched"> 
+                                <fa-icon [icon]="warningIcon"></fa-icon> 
+                                {{ userName.hasError('email') ? 'This is not a valid Email':'Please enter your user name'}}
+                            </p>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="exampleInputPassword1" class="form-label">Password *</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control user__password" placeholder="Password"
+                                    formControlName="password" #password>
+                                <span class="input-group-text" #showHideBtn (click)="changeIcon()"><img
+                                        src="../../../assets/images/svg-icons/eye-hide-show.svg" alt=""
+                                        #showHideIcon></span>
+                            </div>
+                            <p class="warn" #warning *ngIf="userPassword && userPassword.invalid && userPassword.touched"> 
+                                <fa-icon [icon]="warningIcon"></fa-icon>
+                                {{ userPassword.hasError('required') ? 'Please enter your password':'wrong password'}}
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn login__btn shrink mb-1">Login</button>
+                            <ul class="forget-pass-lnk">
+                                <li class="mb-2">
+                                    <a [routerLink]="['/forgetpassword']">
+                                        Forgot your password?
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/signin']">
+                                        Sign Up?
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="log-col">
+            <div class="banner-img">
+                <img src="../../../assets/images/login-banner.png" alt="Banner">
+            </div>
+        </div>
+    </div>
+</section>

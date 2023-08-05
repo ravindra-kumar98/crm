@@ -1,0 +1,50 @@
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+/* Importing Font Family file. */
+@font-face {
+    font-family: "CircularStdBook-Regular";
+    src: url(./assets/fonts/CircularStdBook.ttf);
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "CircularStdBook-Medium";
+    src: url(./assets/fonts/CircularStdMedium.ttf);
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "CircularStdBook-Bold";
+    src: url(./assets/fonts/CircularStdBold.ttf);
+    font-display: fallback;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    &:focus-visible {
+        outline: 0;
+    }
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #1F2026;
+    font-family: 'CircularStdBook-Regular';
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

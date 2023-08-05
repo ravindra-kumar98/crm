@@ -1,0 +1,270 @@
+// Log in page's css
+.login-sec {
+    overflow-x: hidden;
+
+    .login-container {
+        display: flex;
+        width: 100%;
+
+        @media (max-width: 767px) {
+            height: 100vh;
+        }
+
+        .log-col {
+            width: 50%;
+
+            @media (max-width: 767px) {
+                width: 100%;
+
+                &:last-child {
+                    display: none;
+                }
+            }
+
+            .form-wrap {
+                width: 100%;
+                width: 100%;
+                height: 100%;
+                padding: 0 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                @media (min-width: 576px) and (max-width: 767px) {
+                    margin: 0 auto;
+                    max-width: 540px;
+                }
+
+                @media (min-width: 768px) {
+                    padding: 0 40px;
+                }
+
+                @media (min-width: 992px) {
+                    padding: 0 60px;
+                }
+
+                @media (min-width: 1024px) {
+                    padding: 0 90px;
+                }
+
+                @media (min-width: 1200px) {
+                    padding: 0 110px;
+                }
+
+                @media (min-width: 1500px) {
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+
+                @media (max-width: 1443px) and (min-width: 1324px) {
+                    padding: 0 120px;
+                }
+
+                @media (max-width: 1323px) and (min-width: 1300px) {
+                    padding: 0 100px;
+                }
+
+                .logo-img {
+                    margin-bottom: 30px;
+
+                    img {
+                        width: 220px;
+
+                        @media (max-width: 575px) {
+                            width: 180px;
+                        }
+                    }
+                }
+
+                h1 {
+                    font-family: 'CircularStdBook-Bold';
+                    font-size: 24px;
+                    color: #FF8000;
+                    margin-bottom: 15px;
+
+                    @media (min-width: 768px) {
+                        font-size: 26px;
+                    }
+
+                    @media (min-width: 992px) {
+                        font-size: 28px;
+                        margin-bottom: 15px;
+                    }
+
+                    @media (min-width: 1024px) {
+                        margin-bottom: 20px;
+                        font-size: 30px;
+                    }
+
+                    @media (min-width: 1200px) {
+                        margin-bottom: 20px;
+                        font-size: 34px;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 36px;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                h2 {
+                    color: #2E2E2E;
+                    font-size: 20px;
+                    font-family: 'CircularStdBook-Bold';
+                    margin-bottom: 15px;
+
+                    @media (min-width: 768px) {
+                        font-size: 20px;
+                    }
+
+                    @media (min-width: 992px) {
+                        font-size: 20px;
+                        margin-bottom: 15px;
+                    }
+
+                    @media (min-width: 1024px) {
+                        margin-bottom: 20px;
+                        font-size: 22px;
+                    }
+
+                    @media (min-width: 1200px) {
+                        margin-bottom: 20px;
+                        font-size: 24px;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 26px;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                form {
+                    label {
+                        font-family: 'CircularStdBook-Regular';
+                        font-size: 16px;
+                        color: #9B9B9B;
+                    }
+
+                    .warn {
+                        margin-top: 8px;
+                        margin-left: 10px;
+                        margin-bottom: 0;
+                        color: #F32013;
+                    }
+
+                    input.form-control {
+                        width: 100%;
+                        height: 50px;
+                        border: 1px solid #DCE1FB;
+                        border-radius: 10px;
+                        opacity: 1;
+                        background-color: #F5F7FC;
+
+                        &.user__password {
+                            border-radius: 10px 0 0 10px;
+                            border-right: 0;
+                        }
+
+                        &:focus {
+                            color: #505050;
+                            background-color: #F5F7FC;
+                            border-color: #DCE1FB;
+                            outline: 0;
+                            box-shadow: none;
+                        }
+
+                        &::-webkit-input-placeholder {
+                            /* Edge */
+                            color: #505050;
+                            font-size: 16px;
+                        }
+
+                        &:-ms-input-placeholder {
+                            /* Internet Explorer 10-11 */
+                            color: #505050;
+                            font-size: 16px;
+                        }
+
+                        &::placeholder {
+                            color: #505050;
+                            font-size: 16px;
+                        }
+                    }
+
+                    .input-group {
+                        flex-wrap: nowrap;
+
+                        span.input-group-text {
+                            height: 50px;
+                            border: 1px solid #DCE1FB;
+                            border-radius: 0 10px 10px 0;
+                            background-color: #F5F7FC;
+                            border-left: 0;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .login__btn {
+                        font-family: "CircularStdBook-Regular";
+                        width: 100%;
+                        height: 50px;
+                        font-size: 18px;
+                        line-height: 2.3;
+                        color: #fff;
+                        border: 1px solid #FF8000;
+                        border-radius: 10px;
+                        opacity: 1;
+                        background-color: #FF8000;
+
+                        &.shrink {
+                            transition-duration: 0.3s;
+                            transition-property: transform;
+                            -webkit-tap-highlight-color: transparent;
+                            transform: translateZ(0);
+
+                            &:hover {
+                                transform: scale(0.99);
+                                box-shadow: 0 0 1px 0 #FF8000 inset, 0 0 10px 2px #FF8000;
+                                border: 1px solid #fff;
+                            }
+                        }
+
+                        &:focus {
+                            color: #fff;
+                            background-color: #FF8000;
+                            border-color: DCE1FB;
+                            outline: 0;
+                            box-shadow: none;
+                        }
+                    }
+
+                    .forget-pass-lnk {
+                        margin-top: 15px;
+                        text-align: right;
+                        font-size: 16px;
+                        a {
+                            font-size: 16px;
+                            text-decoration: underline;
+                            color: #FF8000;
+                            transition: all 0.3s ease;
+
+                            &:hover {
+                                color: #FF8000;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .banner-img {
+                img {
+                    width: 100%;
+                    height: 100vh;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+// Log in page's css
